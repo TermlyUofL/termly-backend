@@ -1,0 +1,67 @@
+[
+  {
+    "course_name": "Data Structures", "subject": "CSE", "course_number": "220",
+    "description": "Abstract data types, lists, stacks, queues, trees, graphs, hashing and their analysis.",
+    "credit": 3, "course_session": "Regular Full", "course_career": "Undergraduate", "hasPreReq": true,
+    "sections": [
+      {"crn": "7587", "meeting_days": "M W F", "start_time": "14:20", "end_time": "15:15",
+       "section_location": "117 Duthie", "section_type": "LEC", "instructor_name": "Dr. White",
+       "instruction_mode": "In Person", "status": "Not Full"},
+      {"crn": "7588", "meeting_days": "T Tr", "start_time": "09:30", "end_time": "10:45",
+       "section_location": "102 Duthie", "section_type": "LEC", "instructor_name": "Dr. Patel",
+       "instruction_mode": "In Person", "status": "Full"},
+      {"crn": "7589", "meeting_days": "", "start_time": "", "end_time": "",
+       "section_location": "Online", "section_type": "LEC", "instructor_name": "Dr. White",
+       "instruction_mode": "Online Asynchronous", "status": "Not Full"}
+    ]
+  },
+  {
+    "course_name": "Computer Systems", "subject": "CSE", "course_number": "310",
+    "description": "Machine-level representation of programs, memory hierarchy, linking and processes.",
+    "credit": 4, "course_session": "Regular Full", "course_career": "Undergraduate", "hasPreReq": true,
+    "sections": [
+      {"crn": "8101", "meeting_days": "M W", "start_time": "11:00", "end_time": "12:15",
+       "section_location": "210 Duthie", "section_type": "LEC", "instructor_name": "Dr. Nguyen",
+       "instruction_mode": "In Person", "status": "Not Full"},
+      {"crn": "8102", "meeting_days": "F", "start_time": "14:00", "end_time": "15:50",
+       "section_location": "Lab 3 Duthie", "section_type": "LAB", "instructor_name": "Dr. Nguyen",
+       "instruction_mode": "In Person", "status": "Not Full"},
+      {"crn": "8103", "meeting_days": "R", "start_time": "13:00", "end_time": "14:50",
+       "section_location": "Lab 3 Duthie", "section_type": "LAB", "instructor_name": "Dr. Nguyen",
+       "instruction_mode": "In Person", "status": "Not Full"}
+    ]
+  },
+  {
+    "course_name": "Software Engineering", "subject": "CSE", "course_number": "350",
+    "description": "Software process, requirements, design, testing and team projects.",
+    "credit": 3, "course_session": "Regular Full", "course_career": "Undergraduate", "hasPreReq": true,
+    "sections": [
+      {"crn": "8350", "meeting_days": "T R", "start_time": "14:30", "end_time": "15:45",
+       "section_location": "Online", "section_type": "LEC", "instructor_name": "Dr. Lee",
+       "instruction_mode": "Online Synchronous", "status": "Not Full"}
+    ]
+  },
+  {
+    "course_name": "Technical Writing", "subject": "ENGL", "course_number": "303",
+    "description": "Writing for scientific and technical audiences.",
+    "credit": 3, "course_session": "Second Half", "course_career": "Undergraduate", "hasPreReq": false,
+    "sections": [
+      {"crn": "9303", "meeting_days": "M W F", "start_time": "10:00", "end_time": "10:50",
+       "section_location": "305 Bingham", "section_type": "LEC", "instructor_name": "Dr. Carter",
+       "instruction_mode": "In Person", "status": "Not Full"},
+      {"crn": "9304", "meeting_days": "", "start_time": "", "end_time": "",
+       "section_location": "Online", "section_type": "LEC", "instructor_name": "Dr. Carter",
+       "instruction_mode": "Online Asynchronous", "status": "Not Full"}
+    ]
+  },
+  {
+    "course_name": "Machine Learning", "subject": "CSE", "course_number": "632",
+    "description": "Supervised and unsupervised learning, model selection and evaluation.",
+    "credit": 3, "course_session": "Regular Full", "course_career": "Graduate", "hasPreReq": true,
+    "sections": [
+      {"crn": "6320", "meeting_days": "T R", "start_time": "17:30", "end_time": "18:45",
+       "section_location": "120 Duthie", "section_type": "LEC", "instructor_name": "Dr. Kim",
+       "instruction_mode": "In Person", "status": "Not Full"}
+    ]
+  }
+]

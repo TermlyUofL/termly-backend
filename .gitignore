@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+instance/
+*.db
+.env
+.venv/
+courseleaf_raw_*.json
