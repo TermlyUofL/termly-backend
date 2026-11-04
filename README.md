@@ -18,20 +18,21 @@ source .venv/bin/activate       # Windows: .venv\Scripts\activate
 python -m pip install -r requirements.txt
 ```
 
-With no `DATABASE_URL`, the app uses SQLite at `instance/termly_dev.db` and creates its tables at startup. To load real data, first check available terms, then sync a subject with section details:
+With no `DATABASE_URL`, the app uses SQLite at `instance/termly_dev.db` and creates its tables at startup. Load the saved real-data dump into the local database, then start the development server:
 
 ```bash
-python courseleaf_live.py --list-terms
-python courseleaf_live.py --term "Spring 2027" --subject CSE --details
+.venv/bin/python courseleaf_live.py --from-raw data/spring-2027.json
+.venv/bin/flask --app app run --debug
 ```
 
-Start the development server:
+Create the dump once if needed:
 
 ```bash
-flask --app app run --debug
+.venv/bin/python courseleaf_live.py --term "Spring 2027" --all-subjects --details \
+  --dump data/spring-2027.json --dry-run
 ```
 
-The API is available at <http://localhost:5000>; check it with `curl http://localhost:5000/api/health`. `--details` retrieves meeting times required for calendar conflict checking. For a full term, replace `--subject CSE` with `--all-subjects`; this can take 10–15 minutes. See [COURSELEAF_SETUP.md](COURSELEAF_SETUP.md) for import options and troubleshooting.
+The API is available at <http://localhost:5000>; check it with `curl http://localhost:5000/api/health`. The `data/spring-2027.json` dump must exist first; create it once from CourseLeaf with `--all-subjects --details --dump data/spring-2027.json --dry-run`. See [COURSELEAF_SETUP.md](COURSELEAF_SETUP.md) for import options and troubleshooting.
 
 To try the API without fetching data, load the included sample dataset instead:
 
