@@ -58,7 +58,7 @@ class Section(db.Model):
     meeting_days = db.Column(db.String(20), default="")           # "M W F" / "TR"
     start_time = db.Column(db.String(10), default="")             # "14:20"
     end_time = db.Column(db.String(10), default="")               # "15:45"
-    section_location = db.Column(db.String(100), default="")      # 117 Duthie
+    section_location = db.Column(db.String(100), default="")      # room or campus: "117 Duthie" / "Belknap Campus"
     section_type = db.Column(db.String(10), default="LEC")        # LEC/REC/SEM/LAB
     instructor_name = db.Column(db.String(100), default="")
     instruction_mode = db.Column(db.String(50), index=True)       # In Person, Online ...

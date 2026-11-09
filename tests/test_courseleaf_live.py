@@ -135,3 +135,22 @@ def test_whole_term_in_one_request():
     results, _ = fetch_term(client, "4272", None, log=lambda *_: None)
     searches = [c for c in calls if "route=search" in c.full_url and "instmode" not in c.full_url]
     assert len(results) == 4 and len(searches) == 1
+
+
+def test_section_location_from_camp_html():
+    # Fake data, no network: CourseLeaf only gives a campus (camp_html) in the
+    # course-level details; "Varies by section" must stay empty.
+    def row(code, crn):
+        return {"code": code, "crn": crn, "title": code, "stat": "A", "meetingTimes": "[]"}
+    results = [row("CSE 220", "1"), row("CSE 220", "2"),   # multi-section, one campus
+               row("CSE 310", "3"), row("CSE 310", "4"),   # multi-section, campus varies
+               row("CSE 400", "5")]                        # single section
+    details = {
+        "CSE 220": {"crn": "Varies by section", "camp_html": "Belknap Campus"},
+        "CSE 310": {"crn": "Varies by section", "camp_html": "Varies by section"},
+        "CSE 400": {"crn": "5", "camp_html": "Health Sciences Center"},
+    }
+    locs = {s["crn"]: s["section_location"]
+            for c in results_to_records(results, details) for s in c["sections"]}
+    assert locs == {"1": "Belknap Campus", "2": "Belknap Campus",
+                    "3": "", "4": "", "5": "Health Sciences Center"}
