@@ -491,8 +491,12 @@ def results_to_records(results, details=None, log=None):
                               or _first(det_sec, "instmode", "inst_mode", "instmode_html"))
         if mode is None and days:
             mode = "In Person"
+        # CourseLeaf gives no room, only the campus in course-level camp_html
+        # (read from det, so multi-section courses on one campus get it too).
+        # "Varies by section" is skipped by _first and leaves this empty.
         location = _text(_first(row, "bldg_room", "room", "location")
-                         or _first(det_sec, "location"))
+                         or _first(det_sec, "location")
+                         or _first(det, "camp_html"))
         instructor = _text(row.get("instr") or grid.get("instructor")
                            or _first(det_sec, "instructordetail_html"))
         if instructor.upper().endswith("TBA"):
