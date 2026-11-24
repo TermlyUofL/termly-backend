@@ -1,0 +1,12 @@
+.git
+.github
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+instance
+*.db
+.env
+.DS_Store
+tests
+courseleaf_raw_*.json
